@@ -17,6 +17,7 @@ SERVER SIDE
                 PORT=
                 
 2.Install dependencies if needed (mandotory install Nodemon).
+
 3.cd.. to server folder and run the command
 
                 npx nodemon server.js    
