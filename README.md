@@ -3,27 +3,25 @@ CLIENT SIDE
 2.  npm start
 3.  register a admin use the checkbox on the UI.
 4. Go ManageProduct Link on the nav bar.
-5. Add each products with details / otherway you check the point number:5 (SERVER SIDE).
+5. Add each products with details / otherway you check the point number:4 (SERVER SIDE).
 6. You can edit, update and delete products Only Admins.
 7. Users have to deal cart, products details and wishlist features.
 
 
 SERVER SIDE
 
-1.create a db.js inside the config folder.
-
-2.Enter your :
+1.create a   .env   file and Enter your :
 
                 MONGO_URI=
                 JWT_SECRET= 
                 PORT=
                 
-3.Install dependencies if needed (mandotory install Nodemon).
-4.cd.. to server folder and run the command
+2.Install dependencies if needed (mandotory install Nodemon).
+3.cd.. to server folder and run the command
 
                 npx nodemon server.js    
                 
-5.Go to browser window and
+4.Go to browser window and
 
                 console.log(localStorage.Token)
                 
@@ -127,4 +125,4 @@ body json is array [{},{},...etc.],
     ]
 submit the request.
 
-6. Manage the All project from front-end.
+5. Manage the All project from front-end.
