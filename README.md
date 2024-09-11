@@ -11,18 +11,13 @@ CLIENT SIDE
 SERVER SIDE
 
 1.create a db.js inside the config folder.
-
 2.Enter your :
                 MONGO_URI=
                 JWT_SECRET= 
                 PORT=
-                
 3.Install dependencies if needed (mandotory install Nodemon).
-
 4.cd.. to server folder and run the command
-                npx nodemon server.js
-
-                
+                npx nodemon server.js    
 5.Go to browser window and console.log(localStorage.Token) on browser console. you got a token and copy the data.
   Make a api req as
         POST http://localhost:5000/api/products/bulk
