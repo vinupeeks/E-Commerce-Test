@@ -1,0 +1,48 @@
+/* EditProduct.css */
+
+/* Container for the edit product form */
+.edit-product-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.edit-product-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form style */
+.edit-product-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-product-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button style */
+.edit-product-container button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-product-container button:hover {
+    background-color: #0056b3;
+}

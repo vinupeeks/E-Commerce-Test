@@ -1,0 +1,87 @@
+/* ProductList.css */
+
+/* Container for the product list */
+.product-list-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Heading style */
+.product-list-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Link style */
+.product-list-container a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+}
+
+.product-list-container a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Style for each product item */
+.product-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image style */
+.product-list-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* Product details style */
+.product-list-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-list-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Button style */
+.product-list-item button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-list-item button:hover {
+    opacity: 0.8;
+}
+
+.product-list-item button:first-of-type {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.product-list-item button:last-of-type {
+    background-color: #dc3545;
+    color: #fff;
+}
