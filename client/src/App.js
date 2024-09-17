@@ -10,7 +10,7 @@ import Login from './components/Login/Login.js';
 import Register from './components/Register/Register.js';
 import AddProduct from './components/Admin/AddProduct/AddProduct.js';
 import ProductList from './components/Admin/ProductList/ProductList.js';
-import EditProduct from './components/Admin/AddProduct/EditProduct/EditProduct.js';
+import EditProduct from './components/Admin/EditProduct/EditProduct.js';
 import PrivateRoute from './utils/PrivateRoute.js';
 
 

@@ -66,7 +66,7 @@ const SingleProduct = () => {
                 <p>{product.description}</p>
                 <p><strong>Category:</strong> {product.category}</p>
                 <p><strong>Price:</strong> ${product.price}</p>
-                <p><strong>Status:</strong> {product.stock > 0 ? 'In Stock' : 'Out of Stock'}</p>
+                <p><strong>Status:</strong> {product.stock > 0 ? `In Stock (${product.stock})` : 'Out of Stock'}</p>
                 <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
                 <button onClick={() => handleAddToWishlist(product._id)}>Add to Wishlist</button>
             </div>
