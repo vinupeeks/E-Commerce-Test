@@ -1,5 +1,4 @@
 {
-  "name": "Ecom-backend",
   "description": "Backend for MERN E-Com",
   "main": "server.js",
   "scripts": {
