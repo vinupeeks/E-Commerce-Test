@@ -55,14 +55,14 @@ const ProductListing = () => {
             if (actionType === 'cart') {
                 try {
                     await addToCart(product._id, token);
-                    console.log('Product added to cart');
+                    alert('Product added to cart');
                 } catch (error) {
                     console.error('Error adding product to cart:', error.response?.data || error);
                 }
             } else if (actionType === 'wishlist') {
                 try {
                     const response = await addToWishlist(product._id);
-                    console.log('Product added to wishlist:', response);
+                    alert('Product added to wishlist:', response);
                 } catch (error) {
                     if (error.message === 'Not authenticated') {
                         navigate('/login');

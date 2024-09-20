@@ -29,7 +29,7 @@ SERVER SIDE
    on browser console. you got a token and copy the data.
   Make a api req as
   
-        POST http://localhost:5000/api/products/bulk
+        POST https://e-commerce-test-qeb8.onrender.com/api/products/bulk
         
 add the copied token into the auth Bearer,
 body json is array [{},{},...etc.],

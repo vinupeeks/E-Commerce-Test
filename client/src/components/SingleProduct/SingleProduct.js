@@ -32,7 +32,7 @@ const SingleProduct = () => {
         }
         try {
             const response = await addToCart(product._id, token);
-            console.log('Product added to cart', response.data);
+            alert('Product added to cart', response.data);
         } catch (error) {
             console.error('Error adding product to cart:', error);
         }
@@ -41,7 +41,7 @@ const SingleProduct = () => {
     const handleAddToWishlist = async (productId) => {
         try {
             const response = await addToWishlist(productId);
-            console.log('Product added to wishlist:', response);
+            alert(`Product added to wishlist `);
 
         } catch (error) {
             if (error.message === 'Not authenticated') {

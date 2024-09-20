@@ -21,6 +21,9 @@ const Cart = () => {
         console.log('cartItems:', cartItems);
     }, [cartItems]);
 
+    const handleHomePage = () => {
+        navigate(`/`);
+    }
     const handleRemoveFromCart = async (productId) => {
         try {
             const response = await removeFromCart(productId);
@@ -86,7 +89,11 @@ const Cart = () => {
         <div className="cart-page">
             <h2>Your Cart</h2>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty</p>
+                <>
+                    <p>Your cart is empty</p>
+                    <button onClick={handleHomePage}>GO and Purchase</button>
+                </>
+
             ) : (
                 cartItems.map(item => (
                     item.productId && (

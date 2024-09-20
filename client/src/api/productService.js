@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/products';
+const API_BASE_URL = 'https://e-commerce-test-qeb8.onrender.com/api/products';
 
 export const getProducts = async () => {
     try {
