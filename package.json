@@ -4,7 +4,8 @@
   "description": "CLIENT SIDE\r 1.  cd...to client\r 2.  npm start\r 3.  register a admin use the checkbox on the UI.\r 4. Go ManageProduct Link on the nav bar.\r 5. Add each products with details / otherway you check the point number:4 (SERVER SIDE).\r 6. You can edit, update and delete products Only Admins.\r 7. Users have to deal cart, products details and wishlist features.",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && npm run start",
+    "start": "npx nodemon server.js",
+    "dev": "npx nodemon server.js",
     "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
