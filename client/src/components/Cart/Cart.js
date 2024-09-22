@@ -95,27 +95,29 @@ const Cart = () => {
                 </>
 
             ) : (
-                cartItems.map(item => (
-                    item.productId && (
-                        <div key={item.productId._id || item._id} className="cart-item">
-                            <img src={item.productId.image} alt={item.productId.name} />
-                            <div>
-                                <h3>{item.productId.name}</h3>
-                                <p>Unit Price: ${item.productId.price}</p>
-                                <p>Total Price: ${(item.productId.price * item.quantity).toFixed(2)}</p>
-                                <p>Quantity: {item.quantity}</p>
-                                <p><strong>Status:</strong> {item.productId.stock > 0 ? 'In Stock' : 'Out of Stock'}</p>
-                                <button onClick={() => handleIncrement(item.productId._id)}>+</button>
-                                <button onClick={() => handleDecrement(item.productId._id)}>-</button>
-                                <button onClick={() => handleRemoveFromCart(item.productId._id)}>Remove</button>
-                                <button onClick={() => viewDetails(item.productId._id)}>View Details</button>
+                <>
+                    {cartItems.map(item => (
+                        item.productId && (
+                            <div key={item.productId._id || item._id} className="cart-item">
+                                <img src={item.productId.image} alt={item.productId.name} />
+                                <div>
+                                    <h3>{item.productId.name}</h3>
+                                    <p>Unit Price: ${item.productId.price}</p>
+                                    <p>Total Price: ${(item.productId.price * item.quantity).toFixed(2)}</p>
+                                    <p>Quantity: {item.quantity}</p>
+                                    <p><strong>Status:</strong> {item.productId.stock > 0 ? 'In Stock' : 'Out of Stock'}</p>
+                                    <button onClick={() => handleIncrement(item.productId._id)}>+</button>
+                                    <button onClick={() => handleDecrement(item.productId._id)}>-</button>
+                                    <button onClick={() => handleRemoveFromCart(item.productId._id)}>Remove</button>
+                                    <button onClick={() => viewDetails(item.productId._id)}>View Details</button>
+                                </div>
                             </div>
-                        </div>
-                    )
-                ))
+                        )
+                    ))}
+                    <h3>Total Price of Cart: ${totalPrice.toFixed(2)}</h3>
+                    <button>Proceed to Checkout</button>
+                </>
             )}
-            <h3>Total Price of Cart: ${totalPrice.toFixed(2)}</h3>
-            <button>Proceed to Checkout</button>
         </div>
     );
 };
