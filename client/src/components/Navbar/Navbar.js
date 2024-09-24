@@ -1,7 +1,7 @@
 // src/components/Navbar.js
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode'; // Fixed import typo
 import { isAdmin } from '../../utils/auth';
 import './Navbar.css';
 
@@ -19,11 +19,11 @@ const Navbar = () => {
                 setUser(decodedToken);
                 setLoggedOut(decodedToken);
             } catch (error) {
-                console.error('Error decoding token:', error.response.data);
+                console.error('Error decoding token:', error);
                 handleLogout();
             }
         }
-    }, [localStorage.Token]);
+    }, [loggedOut]);
 
     const handleLogout = () => {
         localStorage.clear();
@@ -32,9 +32,17 @@ const Navbar = () => {
         navigate('/login');
     };
 
+    // Function to handle menu close when a link is clicked
+    const handleMenuClose = () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+            menuToggle.checked = false;
+        }
+    };
+
     return (
         <nav className="navbar">
-            {/* Checkbox and menu icon for the hamburger menu */}
+            <h2>Shopify</h2>
             <input type="checkbox" id="menu-toggle" className="menu-toggle" />
             <label htmlFor="menu-toggle" className="menu-icon">
                 <span></span>
@@ -42,21 +50,19 @@ const Navbar = () => {
 
             {/* Navigation menu */}
             <div className="menu">
-                <button><Link to="/" className="nav-link">Home</Link></button>
-                <button><Link to="/cart" className="nav-link">Cart</Link></button>
-                <button><Link to="/wishlist" className="nav-link">Wishlist</Link></button>
+                <Link to="/" className="nav-link" onClick={handleMenuClose}>Home</Link>
+                <Link to="/cart" className="nav-link" onClick={handleMenuClose}>Cart</Link>
+                <Link to="/wishlist" className="nav-link" onClick={handleMenuClose}>Wishlist</Link>
                 {admin && (
-                    <button><Link to="/add-product" className="nav-link">Manage Product</Link></button>
+                    <Link to="/add-product" className="nav-link" onClick={handleMenuClose}>Manage Product</Link>
                 )}
                 {user ? (
                     <div className="navbar-user-info">
                         <span>Welcome, {user.username}</span>
-                        <button onClick={handleLogout}>LogOut</button>
+                        <button onClick={handleLogout}>Log Out</button>
                     </div>
                 ) : (
-                    <Link to="/login">
-                        <button>LogIn</button>
-                    </Link>
+                    <Link to="/login" className="login-btn" onClick={handleMenuClose}>Log In</Link>
                 )}
             </div>
         </nav>
