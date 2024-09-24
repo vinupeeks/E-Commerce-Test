@@ -1,7 +1,7 @@
 // src/components/Navbar.js
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode'; // Fixed import typo
+import { jwtDecode } from 'jwt-decode'; // Fixed import typo
 import { isAdmin } from '../../utils/auth';
 import './Navbar.css';
 
@@ -42,7 +42,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <h2>Shopify</h2>
+            <h2 onClick={() => { navigate("/") }}>Shopify</h2>
             <input type="checkbox" id="menu-toggle" className="menu-toggle" />
             <label htmlFor="menu-toggle" className="menu-icon">
                 <span></span>

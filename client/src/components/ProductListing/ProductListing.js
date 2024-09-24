@@ -79,26 +79,37 @@ const ProductListing = () => {
     };
 
     return (
-        <div className="product-listing">
-            <input
-                type="text"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-input"
-            />
-            {filteredProducts.map(product => (
-                <div key={product._id} className="product-card">
-                    <img src={product.image} alt={product.name} className="product-image" />
-                    <h2>{product.name}</h2>
-                    <p>${product.price}</p>
-                    <div className="product-actions">
-                        <button onClick={() => handleAction(product, 'cart')}>Add to Cart</button>
-                        <button onClick={() => handleAction(product, 'wishlist')}>Add to Wishlist</button>
-                    </div>
-                    <Link to={`/product/${product._id}`}>View Details</Link>
+        <div>
+            <div className="search-container">
+                <div className="input-wrapper">
+                    <input
+                        type="text"
+                        placeholder="Search products..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="search-input"
+                    />
+                    <img
+                        src={"https://th.bing.com/th/id/OIP.NfAAYLO3ftYuKOrZdOUk9wHaHa?rs=1&pid=ImgDetMain"}
+                        alt="Search Icon"
+                        className="search-icon"
+                    />
                 </div>
-            ))}
+            </div>
+            <div className="product-listing">
+                {filteredProducts.map(product => (
+                    <div key={product._id} className="product-card">
+                        <img src={product.image} alt={product.name} className="product-image" />
+                        <h2>{product.name}</h2>
+                        <p>${product.price}</p>
+                        <div className="product-actions">
+                            <button onClick={() => handleAction(product, 'cart')}>Add to Cart</button>
+                            <button onClick={() => handleAction(product, 'wishlist')}>Add to Wishlist</button>
+                        </div>
+                        <Link to={`/product/${product._id}`}>View Details</Link>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
