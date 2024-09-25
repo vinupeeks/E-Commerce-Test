@@ -17,7 +17,7 @@ const Navbar = () => {
             try {
                 const decodedToken = jwtDecode(Token);
                 setUser(decodedToken);
-                setLoggedOut(decodedToken);
+                setLoggedOut(false);
             } catch (error) {
                 console.error('Error decoding token:', error);
                 handleLogout();
@@ -27,7 +27,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.clear();
-        setLoggedOut('');
+        setLoggedOut(true);
         setUser(null);
         navigate('/login');
     };

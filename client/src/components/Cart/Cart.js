@@ -6,12 +6,15 @@ import { fetchCartItems, removeFromCart, updateCartItemQuantity } from '../../ap
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        // setLoading(true);
         fetchCartItems()
             .then(data => {
                 console.log('Fetched cart items:', data);
                 setCartItems(data.products || []);
+                setLoading(false);
             })
             .catch(error => {
                 console.error('Error fetching cart items:', error);
@@ -24,10 +27,11 @@ const Cart = () => {
     const handleHomePage = () => {
         navigate(`/`);
     }
+
     const handleRemoveFromCart = async (productId) => {
         try {
             const response = await removeFromCart(productId);
-            if (response.statusText === 'OK') {
+            if (response.statusText === 'OK' || response.status === 200) {
                 setCartItems(prevCart => prevCart.filter(item => item.productId?._id !== productId));
                 console.log('Product removed:', response);
             }
@@ -84,6 +88,11 @@ const Cart = () => {
         }
         return acc;
     }, 0);
+
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="cart-page">
